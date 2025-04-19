@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Vinity - Votre serveur FiveM prêt à l'emploi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        [x-cloak] { display: none !important; }
+        
+        .logo-3d {
+            width: 200px;
+            /*animation: rotateLogo 10s linear infinite;*/
+        }
+        
+        @keyframes rotateLogo {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .logo-3d {
+            width: 200px;
+            animation: pulseLogo 3s infinite alternate;
+        }
+        
+        @keyframes pulseLogo {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+        }
+        
+        .logo-3d:hover {
+            animation-play-state: paused; /* Pause on hover */
+        }
+        
+        .join-image {
+          transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body x-data="{ isMenuOpen: false, currentSection: '' }"
+      @scroll.window="currentSection = getCurrentSection()"
+      :class="{ 'overflow-hidden': isMenuOpen }">
+
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <header :class="{ 'header-scrolled': currentSection !== 'accueil' }">
+        <div class="header-container">
+            <div class="logo">
+                <img src="logo site .png" alt="Base Vinity Logo" style="border-radius: 50%;">
+            </div>
+            <nav :class="{ 'active': isMenuOpen }">
+                <ul class="nav-links">
+                    <li><a href="#accueil" :class="{ 'active': currentSection === 'accueil' }" @click="isMenuOpen = false">Accueil</a></li>
+                    <li><a href="#a-propos" :class="{ 'active': currentSection === 'a-propos' }" @click="isMenuOpen = false">À propos</a></li>
+                    <li><a href="#fonctionnalites" :class="{ 'active': currentSection === 'fonctionnalites' }" @click="isMenuOpen = false">Fonctionnalités</a></li>
+                    <li><a href="#tarifs" :class="{ 'active': currentSection === 'tarifs' }" @click="isMenuOpen = false">Tarifs</a></li>
+                    <li><a href="#contact" :class="{ 'active': currentSection === 'contact' }" @click="isMenuOpen = false">Contact</a></li>
+                    <li><a href="#autres-produits" :class="{ 'active': currentSection === 'autres-produits' }" @click="isMenuOpen = false">Autres Produits</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" @click="isMenuOpen = !isMenuOpen" :class="{ 'active': isMenuOpen }">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <div class="glitch-overlay"></div>
+            <div class="hero-content">
+                <h1 class="glitch" data-text="BASE 5MDEV">BASE 5MDEV</h1>
+                <p class="fade-in">Lancez votre serveur FiveM sans effort avec 5MDEV, une base de serveur prête à l'emploi.</p>
+                <a href="#tarifs" class="btn btn-neon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Découvrir les tarifs
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="hero-social">
+                <a href="https://discord.gg/gzg8AkMYqy" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </section>
+
+        <section id="background-section" class="background-section">
+            <div class="container">
+                <!-- You can add any content here if needed, or just leave it empty -->
+            </div>
+        </section>
+
+        <section id="a-propos" class="about">
+            <div class="container">
+                <h2 class="section-title animate__animated animate__fadeIn">À propos <span>de Base Vinity</span></h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Base Vinity de 5MDEV une solution complète pour lancer rapidement votre serveur FiveM. Oubliez les configurations complexes et les scripts fastidieux. Avec Base Vinity, vous disposez d'une base de serveur optimisée et prête à accueillir votre communauté.</p>
+                        <p>Notre base inclut des scripts essentiels, des véhicules, des métiers et des systèmes de jeu préconfigurés. Gagnez du temps et concentrez-vous sur le développement de votre communauté et de votre gameplay unique.</p>
+                    </div>
+                    <div class="about-video reveal">
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/j5HdoqcnrB4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features">
+                    <div class="feature reveal">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Installation Rapide</h3>
+                            <p>Lancez votre serveur en quelques minutes grâce à notre installation simple.</p>
+                        </div>
+                    </div>
+                    <div class="feature reveal">
+                        <div class="feature-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Facile à Configurer</h3>
+                            <p>Personnalisez facilement votre serveur avec nos options de configuration intuitives.</p>
+                        </div>
+                    </div>
+                    <div class="feature reveal">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Support Premium</h3>
+                            <p>Bénéficiez d'un support technique rapide et efficace pour toutes vos questions sur notre <a href="https://discord.gg/gzg8AkMYqy" target="_blank">Discord</a>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fonctionnalites" class="factions">
+            <div class="container">
+                <h2 class="section-title animate__animated animate__fadeIn">Fonctionnalités <span>Incluses</span></h2>
+                
+                <div class="swiper faction-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="faction-card">
+                                <div class="faction-image">
+                                    <img src="Police.png" alt="Forces de l'ordre">
+                                </div>
+                                <div class="faction-content">
+                                    <h3>Forces de l'Ordre Préconfigurées</h3>
+                                    <p>Système de police complet avec véhicules, uniformes et scripts dédiés.</p>
+                                    <div class="faction-tags">
+                                        <span>Véhicules de police</span>
+                                        <span>Armes</span>
+                                        <span>Gestion des arrestations</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="faction-card">
+                                <div class="faction-image">
+                                    <img src="Criminel.png" alt="Criminels">
+                                </div>
+                                <div class="faction-content">
+                                    <h3>Systèmes Criminels Avancés</h3>
+                                    <p>Activités illégales, braquages, et plus encore pour une expérience de jeu immersive.</p>
+                                    <div class="faction-tags">
+                                        <span>Braquages</span>
+                                        <span>Trafic de drogue</span>
+                                        <span>Système de gangs</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="faction-card">
+                                <div class="faction-image">
+                                    <img src="Medecin.png" alt="Services médicaux">
+                                </div>
+                                <div class="faction-content">
+                                    <h3>Services Médicaux Fonctionnels</h3>
+                                    <p>Hôpital entièrement fonctionnel avec scripts de soins et véhicules médicaux.</p>
+                                    <div class="faction-tags">
+                                        <span>Ambulances</span>
+                                        <span>Soins aux patients</span>
+                                        <span>Réanimation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide">
+                            <div class="faction-card">
+                                <div class="faction-image">
+                                    <img src="civil (1).png" alt="Civils">
+                                </div>
+                                <div class="faction-content">
+                                    <h3>Métiers et Activités Civiles</h3>
+                                    <p>Un large éventail de métiers et d'activités pour les joueurs civils.</p>
+                                    <div class="faction-tags">
+                                        <span>Agriculture</span>
+                                        <span>Transport</span>
+                                        <span>Commerce</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="faction-card">
+                                <div class="faction-image">
+                                    <img src="civil.png" alt="Civil Activities">
+                                </div>
+                                <div class="faction-content">
+                                    <h3>Evenement Exclusif et cinema </h3>
+                                    <p>Profitez des événements exclusifs et des soirées cinéma pour une expérience RP inégalée.</p>
+                                    <div class="faction-tags">
+                                        <span>Cinema</span>
+                                        <span>Evenement</span>
+                                        <span>Animations</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tarifs" class="gallery">
+            <div class="container">
+                <h2 class="section-title animate__animated animate__fadeIn">Nos <span>Tarifs</span></h2>
+                
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 20px;">Choisissez la version qui correspond à vos besoins et lancez votre serveur dès aujourd'hui !</p>
+                
+                <p style="text-align: center; color: var(--primary-color); font-weight: bold; margin-bottom: 20px;">
+                    ⚠️ Important : Après avoir effectué votre paiement, veuillez ouvrir un ticket sur notre <a href="https://discord.gg/gzg8AkMYqy" target="_blank" style="color: var(--secondary-color); text-decoration: underline;">Discord</a> pour recevoir votre achat.
+                </p>
+
+                <div class="gallery-wrapper">
+                    <div class="gallery-grid reveal">
+                        <div class="gallery-item" data-src="lock.png" data-caption="Version de base">
+                            <img src="lock.png" alt="Version de base">
+                            <div class="gallery-caption">Version de base - 90€
+                                <p style="font-size: 0.8em; margin-top: 5px;">Idéal pour débuter avec une base solide.</p>
+                                <a href="https://www.paypal.com/paypalme/Soloteam5MDEV" target="_blank" class="btn btn-outline" style="margin-top: 10px;">Payer avec PayPal</a>
+                            </div>
+                            <div class="ribbon ribbon-top-left"><span>Best Value</span></div>
+                        </div>
+                        <div class="gallery-item" data-src="semilock.png" data-caption="Version avancée">
+                            <img src="semilock.png" alt="Version avancée">
+                            <div class="gallery-caption">Version avancée - 150€
+                                <p style="font-size: 0.8em; margin-top: 5px;">Fonctionnalités avancées pour une expérience enrichie.</p>
+                                <a href="https://www.paypal.com/paypalme/Soloteam5MDEV" target="_blank" class="btn btn-outline" style="margin-top: 10px;">Payer avec PayPal</a>
+                            </div>
+                        </div>
+                        <div class="gallery-item" data-src="unlock.png" data-caption="Version Premium">
+                            <img src="unlock.png" alt="Version Premium">
+                            <div class="gallery-caption">Version Premium - 299€
+                                <p style="font-size: 0.8em; margin-top: 5px;">Support prioritaire et mises à jour exclusives.</p>
+                                <a href="https://www.paypal.com/paypalme/Soloteam5MDEV" target="_blank" class="btn btn-outline" style="margin-top: 10px;">Payer avec PayPal</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="join-us">
+            <div class="container">
+                <h2 class="section-title animate__animated animate__fadeIn">Nous <span>Contacter</span></h2>
+                <div class="join-content">
+                    <div class="join-text">
+                        <p>Intéressé par Base Vinity ? Contactez-nous dès maintenant pour en savoir plus et obtenir votre base de serveur !</p>
+                        
+                        <div class="steps">
+                            <div class="step reveal">
+                                <div class="step-number">01</div>
+                                <div class="step-content">
+                                    <h3>Rejoignez notre Discord</h3>
+                                    <p>Notre serveur Discord est le meilleur endroit pour nous contacter directement et poser vos questions.</p>
+                                </div>
+                            </div>
+                            <div class="step reveal">
+                                <div class="step-number">02</div>
+                                <div class="step-content">
+                                    <h3>Envoyez-nous un email</h3>
+                                    <p>Vous pouvez également nous contacter par email à l'adresse suivante : contact.5mdevelopement@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="cta">
+                            <a href="https://discord.gg/gzg8AkMYqy" class="btn btn-neon" target="_blank">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <i class="fab fa-discord"></i> Rejoindre le Discord
+                            </a>
+                            <a href="contact.5mdevelopement@gmail.com" class="btn btn-outline" target="_blank">
+                                <i class="fas fa-envelope"></i> Envoyer un email
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="join-image reveal">
+                        <div class="logo-3d">
+                            <img src="logo site .png" alt="Base Vinity Logo" style="border-radius: 50%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Section: Discover Our Other Products -->
+        <section id="autres-produits" class="other-products">
+            <div class="container">   
+                 <h2 class="section-title animate__animated animate__fadeIn">Preview <span>Mlo,Script,Mapping...</span></h2>
+                 <div class="swiper other-products-slider">
+                     <div class="swiper-wrapper">
+                         <div class="swiper-slide">
+                             <div class="product-card">
+                                 <img src="hkump.png" alt="arme">
+                                 <h3>HK UMP</h3>
+                                <p>Arme de poing, réaliste et silencieuse</p>
+                             </div>
+                         </div>
+                         <div class="swiper-slide">
+                             <div class="product-card">
+                                 <img src="graf.jpg" alt="Script 1">
+                                 <h3>Script Graffiti</h3>
+                                 <p>https://www.youtube.com/watch?v=36Xdf3i8iJM**</p>
+                             </div>
+                         </div>
+                         <div class="swiper-slide">
+                             <div class="product-card">
+                                 <img src="comico.jpg" alt="MLO 1">
+                                 <h3>MLO Commissariat</h3>
+                                 <p>https://www.youtube.com/watch?v=T5xTItE_k2Q</p>
+                             </div>
+                         </div>
+                         <div class="swiper-slide">
+                             <div class="product-card">
+                                 <img src="monoral.jpg" alt="Clothing Pack 1">
+                                 <h3>Monorail</h3>
+                                 <p>https://www.youtube.com/watch?v=Pj_3N3TtaPo</p>
+                             </div>
+                         </div>
+                         <div class="swiper-slide">
+                             <div class="product-card">
+                                 <img src="packdlc.jpg" alt="Script">
+                                 <h3>Theme Park DLC </h3>
+                                 <p>https://www.youtube.com/watch?v=fPQKHpBl1vQ</p>
+                             </div>
+                         </div>
+                         <div class="swiper-slide">
+                             <div class="product-card">
+                                 <img src="Dragron.jpg" alt="Script 2">
+                                 <h3>BlackSniper</h3>
+                                 <p>Fusil de sniper en forme de dragon</p>
+                             </div>
+                         </div>
+                         <div class="swiper-slide">
+                             <div class="product-card">
+                                 <img src="Hood.png" alt="Mapping">
+                                 <h3>Quartier Ballas</h3>
+                                 <p>https://youtu.be/rKC22g8l8HM?si=scgTHLSYexyyliAY</p>
+                             </div>
+                         </div>
+                         <div class="swiper-slide">
+                             <div class="product-card">
+                                 <img src="scar17.jpg" alt="Arme 2">
+                                 <h3>Scar 17</h3>
+                                 <p>Arme réaliste, modélisée en jeux</p>
+                             </div>
+                         </div>
+                         <div class="swiper-slide">
+                             <div class="product-card">
+                                 <img src="Hp.png" alt="Mapping 3">
+                                 <h3>Hôpital</h3>
+                                 <p>https://www.youtube.com/watch?v=j8i6TnAiADs</p>
+                             </div>
+                         </div>
+                         <div class="swiper-slide">
+                             <div class="product-card">
+                                 <img src="lbphone.jpg" alt="Script 3">
+                                 <h3>LB PHONE</h3>
+                                 <p>https://www.youtube.com/watch?v=IPv73wO71JA
+                                </p>
+                             </div>
+                         </div>
+                     </div>
+                     <div class="swiper-pagination"></div>
+                     <div class="swiper-button-next"></div>
+                     <div class="swiper-button-prev"></div>
+                 </div>
+             </div>
+         </section>
+
+        <footer class="custom-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo site .png" alt="Base Vinity Logo" style="border-radius: 50%;">
+                </div>
+                <div class="footer-links">
+                    <h3>Liens utiles</h3>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#a-propos">À propos</a></li>
+                        <li><a href="#fonctionnalites">Fonctionnalités</a></li>
+                        <li><a href="#tarifs">Tarifs</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#autres-produits">Autres Produits</a></li>
+                        <li><a href="https://discord.gg/gzg8AkMYqy" target="_blank">Discord</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contactez-nous</h3>
+                    <p><i class="fas fa-envelope"></i> contact.5mdevelopement@gmail.com</p>
+                    <p><i class="fab fa-discord"></i> <a href="https://discord.gg/gzg8AkMYqy" target="_blank">Rejoindre le Discord</a></p>
+                </div>
+                <div class="footer-legal">
+                    <h3>Légal</h3>
+                    <ul>
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Conditions d'utilisation</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Base Vinity. Tous droits réservés.</p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+        <script src="script.js"></script>
+        <script>
+            // This script is just for demonstration and MUST BE REPLACED with real payment processing
+            function payWithPayPal(price) {
+              alert(`Redirection vers PayPal pour un paiement de ${price}€ (À remplacer par une intégration réelle)`);
+            }
+
+            function getCurrentSection() {
+                const sections = document.querySelectorAll('section');
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                return current;
+            }
+        </script>
+    </main>
+</body>
+</html>
